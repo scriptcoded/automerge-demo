@@ -3,11 +3,12 @@ import { getInitials } from "../../util/names"
 
 export type Props = {
   name: string
+  noInitials?: boolean
 }
 
-export default function Avatar ({ name }: Props) {
+export default function Avatar ({ name, noInitials }: Props) {
   const color = stringToHslColor(name)
-  const initials = getInitials(name)
+  const initials = noInitials ? name : getInitials(name)
 
   return (
     <div

@@ -1,4 +1,4 @@
-import Avatar from "./Avatar"
+import AvatarList from "./AvatarList"
 
 export type Props = {
   title: string
@@ -28,9 +28,7 @@ export default function Header (props: Props) {
           <span className="text-stone-600 text-sm italic">{user}</span>
         )}
         {users && (
-          <div className="flex flex-row-reverse gap-1">
-            {users.map(name => <Avatar key={name} name={name} />)}
-          </div>
+          <AvatarList users={users} />
         )}
       </div>
     </div>

@@ -51,7 +51,7 @@ function App() {
   const [userName] = useState(getRandomName())
   const otherUsers = usePresence(rootDoc, userName)
   const otherUserNames = Object.values(otherUsers).map(user => user.name)       //#endregion
-  
+
   return (
     <ContentWrapper>
       <Header

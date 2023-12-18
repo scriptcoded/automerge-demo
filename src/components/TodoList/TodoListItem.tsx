@@ -1,4 +1,3 @@
-import { Xmark } from 'iconoir-react';
 import { useDocument } from "@automerge/automerge-repo-react-hooks";
 import { AutomergeUrl } from "@automerge/automerge-repo";
 import { TodoItem } from "../../types";

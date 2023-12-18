@@ -5,6 +5,7 @@ import { TodoItem } from "../../types";
 import Checkbox from "./Checkbox";
 import Input from "./Input";
 import { twMerge } from "tailwind-merge";
+import RemoveButton from "./RemoveButton";
 
 export type Props = {
   documentUrl: AutomergeUrl
@@ -45,12 +46,9 @@ export default function TodoListItem ({ documentUrl, onRemove }: Props) {
         onChange={value => setText(value)}
         strikethrough={todo.completed}                                          //#endregion
       />
-      <button
-        className="flex justify-center items-center w-10 invisible group-hover:visible"
+      <RemoveButton
         onClick={onRemove}                                                      //#region[yellow]endregion
-      >
-        <Xmark />
-      </button>
+      />
     </li>
   )
 }

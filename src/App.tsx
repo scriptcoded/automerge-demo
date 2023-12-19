@@ -7,9 +7,6 @@ import Button from "./components/dumb/Button"
 import { Plus } from 'iconoir-react';
 import { AppState, TodoItem } from "./types"
 import { AutomergeUrl } from "@automerge/automerge-repo"
-import { useState } from "react"
-import { getRandomName } from "./util/names"
-import { usePresence } from "./util/usePresence"
 
 function App() {
   const repo = useRepo()                                                        //#region[red]endregion
@@ -48,15 +45,13 @@ function App() {
   }                                                                             //#endregion
 
   // Use presence ie. track who's currently visiting the document               //#region[purple]
-  const [userName] = useState(getRandomName())
-  const otherUsers = usePresence(rootDoc, userName)
-  const otherUserNames = Object.values(otherUsers).map(user => user.name)       //#endregion
+  // const [userName] = useState(getRandomName())
+  // const otherUsers = usePresence(rootDoc, userName)
+  // const otherUserNames = Object.values(otherUsers).map(user => user.name)       //#endregion
 
   return (
     <ContentWrapper>
       <Header
-        otherUsers={otherUserNames}
-        user={userName}
         title="To-Do list"
       />
 

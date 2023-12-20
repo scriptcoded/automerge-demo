@@ -37,16 +37,16 @@ export default function TodoListItem ({ documentUrl, onRemove }: Props) {
       )}
     >
       <Checkbox
-        checked={todo.completed}                                                //#region[yellow]
-        onChange={toggleCompleted}                                              //#endregion
+        checked={todo.completed}
+        onChange={toggleCompleted}
       />
       <Input
-        value={todo.content}                                                    //#region[yellow]
+        value={todo.content}
         onChange={value => setText(value)}
-        strikethrough={todo.completed}                                          //#endregion
+        strikethrough={todo.completed}
       />
       <RemoveButton
-        onClick={onRemove}                                                      //#region[yellow]endregion
+        onClick={onRemove}
       />
     </li>
   )

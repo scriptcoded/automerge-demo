@@ -9,13 +9,13 @@ import { BrowserWebSocketClientAdapter } from "@automerge/automerge-repo-network
 import { IndexedDBStorageAdapter } from "@automerge/automerge-repo-storage-indexeddb"
 import { RepoContext } from '@automerge/automerge-repo-react-hooks'
 
-const repo = new Repo({                                                         //#region[red]
+const repo = new Repo({
   network: [
     new BroadcastChannelNetworkAdapter(),
     new BrowserWebSocketClientAdapter('wss://sync.automerge.org')
   ],
   storage: new IndexedDBStorageAdapter(),
-})                                                                              //#endregion
+})
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

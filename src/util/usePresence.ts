@@ -23,7 +23,7 @@ const DEAD_TIMEOUT = 1500
 export const usePresence = (doc: DocHandle<unknown>, userName: string) => {
   const [otherUsers, setOtherUsers] = useState<Record<string, OtherUser>>({})
 
-  const onHeartbeat = (data: DocHandleEphemeralMessagePayload<unknown>) => {    //#region[blue]
+  const onHeartbeat = (data: DocHandleEphemeralMessagePayload<unknown>) => {
     const { type, userName } = data.message as BroadcastMessage
     if (type !== 'heartbeat') return
 
@@ -36,26 +36,26 @@ export const usePresence = (doc: DocHandle<unknown>, userName: string) => {
         }
       }
     })
-  }                                                                             //#endregion
+  }
 
-  useEffect(() => {                                                             //#region[cyan]
+  useEffect(() => {
     doc.on('ephemeral-message', onHeartbeat)
     return () => void doc.off('ephemeral-message', onHeartbeat)
-  })                                                                            //#endregion
+  })
 
 
-  const sendHeartbeat = () => {                                                 //#region[purple]
+  const sendHeartbeat = () => {
     doc.broadcast({
       type: 'heartbeat',
       userName
     } satisfies BroadcastMessage)
-  }                                                                             //#endregion
+  }
 
-  useInterval(sendHeartbeat, HEARTBEAT_INTERVAL)                                //#region[orange]
-  useEffect(sendHeartbeat)                                                      //#endregion
+  useInterval(sendHeartbeat, HEARTBEAT_INTERVAL)
+  useEffect(sendHeartbeat)
 
   
-  const clearDead = () => {                                                     //#region[red]
+  const clearDead = () => {
     for (const [senderId, user] of Object.entries(otherUsers)) {
       const limit = new Date().getTime() - DEAD_TIMEOUT
       if (user.lastSeen < limit) {
@@ -67,7 +67,7 @@ export const usePresence = (doc: DocHandle<unknown>, userName: string) => {
       }
     }
   }
-  useInterval(clearDead, CLEANUP_INTERVAL)                                      //#endregion
+  useInterval(clearDead, CLEANUP_INTERVAL)
 
   return otherUsers
 }

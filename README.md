@@ -2,6 +2,8 @@
 
 This is a to-do app written by @scriptcoded to demo Automerge at @Knowitcore.
 
+![A screenshot of the app in action](./screenshot.png)
+
 The app demonstrates how Automerge manages to successfully merge changes done in
 different offline sessions when they go online again. The app only covers the
 data structure and as such doesn't include any service worker to cache it and

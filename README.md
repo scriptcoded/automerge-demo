@@ -1,4 +1,4 @@
-# Automerge example
+# Automerge demo
 
 This is a to-do app written by @scriptcoded to demo Automerge at @Knowitcore.
 

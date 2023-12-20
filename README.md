@@ -56,6 +56,17 @@ This is a simple Vite app with React. Tailwind CSS is for styling, Iconoir for
 icons and of course Automerge for the data. Finally there are some small utility
 libraries for quick prototyping.
 
+## Running and developing
+
+Running this project is not hard. Make sure you've got Node installed (I'm using
+Node 20.10 but I'm certain it should run just fine on older versions as well)
+and then just install the dependencies and run it!
+
+```bash
+$ npm install
+$ npm run dev
+```
+
 ## References
 
 Relevant to this demo:

@@ -1,11 +1,11 @@
-import { AutomergeUrl } from '@automerge/automerge-repo'
+import type { AutomergeUrl } from "@automerge/automerge-repo";
 
 export type AppState = {
-  todos: AutomergeUrl[]
-}
+	todos: AutomergeUrl[];
+};
 
 export type TodoItem = {
-  url: AutomergeUrl
-  content: string
-  completed: boolean
-}
+	url: AutomergeUrl;
+	content: string;
+	completed: boolean;
+};

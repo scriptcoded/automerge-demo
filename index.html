@@ -10,9 +10,9 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
-      console.log('Hi!', window.location.hash)
       if (window.location.hash?.startsWith('#demo')) {
-        window.location.hash = '#automergeUrl=automerge%3A3fYAVYQEQE7nmLyJpVnKQ5e5eTaL'
+        window.location.hash = '#automerge:3fYAVYQEQE7nmLyJpVnKQ5e5eTaL';
+        window.location.reload();
       }
     </script>
   </body>

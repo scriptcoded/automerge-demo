@@ -46,7 +46,9 @@ export function RootDocumentProvider({ children }: { children: ReactNode }) {
 			});
 			setRootDoc(doc);
 		}
-		loadDoc();
+		loadDoc().catch((e) => {
+			console.error("Failed to load or create root document", e);
+		});
 	}, [repo]);
 
 	if (!rootDoc) {

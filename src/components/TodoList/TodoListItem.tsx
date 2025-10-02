@@ -5,6 +5,7 @@ import type { TodoItem } from "../../types";
 import Checkbox from "./Checkbox";
 import Input from "./Input";
 import RemoveButton from "./RemoveButton";
+import { updateText } from "@automerge/automerge";
 
 export type Props = {
 	documentUrl: AutomergeUrl;
@@ -22,7 +23,7 @@ export default function TodoListItem({ documentUrl, onRemove }: Props) {
 
 	const setText = (text: string) => {
 		changeTodo((t) => {
-			t.content = text;
+			updateText(t, ["content"], text);
 		});
 	};
 

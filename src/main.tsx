@@ -4,17 +4,14 @@ import App from "./App.tsx";
 import "./index.css";
 
 import { Repo } from "@automerge/automerge-repo";
-import { BroadcastChannelNetworkAdapter } from "@automerge/automerge-repo-network-broadcastchannel";
+
 import { BrowserWebSocketClientAdapter } from "@automerge/automerge-repo-network-websocket";
 import { RepoContext } from "@automerge/automerge-repo-react-hooks";
 import { IndexedDBStorageAdapter } from "@automerge/automerge-repo-storage-indexeddb";
 import { RootDocumentProvider } from "./context/rootDocument.tsx";
 
 const repo = new Repo({
-	network: [
-		new BroadcastChannelNetworkAdapter(),
-		new BrowserWebSocketClientAdapter("wss://sync.automerge.org"),
-	],
+	network: [new BrowserWebSocketClientAdapter("wss://sync.automerge.org")],
 	storage: new IndexedDBStorageAdapter(),
 });
 

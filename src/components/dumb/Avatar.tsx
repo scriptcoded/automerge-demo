@@ -12,7 +12,7 @@ export default function Avatar({ name, noInitials }: Props) {
 
 	return (
 		<div
-			className="flex justify-center items-center w-8 h-8 rounded-full shadow select-none text-sm font-semibold tracking-wider text-stone-900/60 bg-gray-200"
+			className="flex justify-center items-center w-8 h-8 rounded-full shadow select-none text-sm font-semibold tracking-wider text-stone-900/60 bg-stone-100"
 			style={{ backgroundColor: color }}
 			title={name}
 		>

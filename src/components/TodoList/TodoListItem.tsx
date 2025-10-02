@@ -32,7 +32,7 @@ export default function TodoListItem({ documentUrl, onRemove }: Props) {
 	return (
 		<li
 			className={twMerge(
-				"group flex bg-slate-100 rounded-md shadow [&:has(input[type=text]:focus)]:ring-2 ring-stone-400",
+				"group flex bg-slate-100 rounded-md shadow [&:has(input[type=text]:focus)]:ring-2 ring-stone-400 overflow-hidden",
 				todo.completed && "bg-stone-200",
 			)}
 		>
